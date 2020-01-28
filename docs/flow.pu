@@ -1,0 +1,14 @@
+# PlantUML Editor
+
+@startuml
+
+"アプリ" -> "サーバ サイド": Authorization Code
+hnote over "サーバ サイド" : Client Secretの生成
+"サーバ サイド" --> "Apple":Authorization Code & Client Secret
+"Apple" --> "サーバ サイド": ID Token
+"サーバ サイド" --> "Apple": JWK取得
+"Apple" --> "サーバ サイド": JWK
+hnote over "サーバ サイド" :ID Tokenの検証
+hnote over "サーバ サイド" :ログイン処理
+
+@enduml
